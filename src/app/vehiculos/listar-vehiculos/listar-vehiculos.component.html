@@ -14,15 +14,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let v of vehiculos">
-                    <td>{{vehiculo.placa}}</td>
-                    <td>{{vehiculo.marca}}</td>
-                    <td>{{vehiculo.modelo}}</td>
-                    <td>{{vehiculo.color_vehiculo_nombre}}</td>
-                    <td><button class="btn btn-primary" type="button" (click)="onEditarNavigate(v.id) title="Editar">
+                <tr *ngFor="let v of Vehiculos">
+                    <td>{{v.placa}}</td>
+                    <td>{{v.marca}}</td>
+                    <td>{{v.modelo}}</td>
+                    <td>{{v.color_vehiculo_nombre}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="onEditarNavigate(v.id)" title="Editar">
                             Editar
-                    </button>&nbsp;</td>
+                        </button>&nbsp;
+                    </td>
                 </tr>
+            </tbody>
+                
         </table>
     </div>
 </div>
