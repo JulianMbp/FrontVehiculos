@@ -16,9 +16,9 @@
             <tbody>
                 <tr *ngFor="let v of Vehiculos">
                     <td>{{v.placa}}</td>
+                    <td>{{v.color_vehiculo}}</td>
                     <td>{{v.marca}}</td>
                     <td>{{v.modelo}}</td>
-                    <td>{{v.color_vehiculo_nombre}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" (click)="onEditarNavigate(v.id)" title="Editar">
                             Editar
@@ -26,7 +26,6 @@
                     </td>
                 </tr>
             </tbody>
-                
         </table>
     </div>
 </div>
