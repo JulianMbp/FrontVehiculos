@@ -1,15 +1,16 @@
 <div class="container-fluid">
     <div class="col-lg-6 offset-lg-3">
+        <!-- Encabezado -->
     <header>
+        <h1>Nuevo Vehiculo</h1>
     </header>
-
     <section>
         <!-- Formulario de Creacion de Vehiculos -->
         <form action="" [formGroup]="vehiculoForm" (ngSubmit)="!vehiculoForm.invalid && crearVehiculo(vehiculoForm.value)">
             <div class="row">
+                <!-- campos del formulario -->
                 <div class="col col-12">
-                    <!-- Campos Requeridos
-                    placa -->
+                    <!-- placa -->
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="placa">Placa</label>
                         <input id="placa" class="form-control" formControlName="placa" maxlength="6" autocomplete="off" placeholder="Ingrese la pLaca">
@@ -46,11 +47,10 @@
                             El contenido es muy corto, debe tener al menos dos caracteres
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <br />
+            <!-- Boton Crear -->
             <button type="submit" class="btn btn-primary" [disabled]="!vehiculoForm.valid">Crear</button>&nbsp;
         </form>
     </section>
