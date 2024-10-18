@@ -15,14 +15,15 @@ import { CommonModule } from '@angular/common';
 })
 export class CrearVehiculosComponent implements OnInit {
   vehiculoForm!: FormGroup;
+
   constructor(private formBuilder: FormBuilder, private vehiculosService: VehiculosService) {}
 
   ngOnInit()  {
       this.vehiculoForm = this.formBuilder.group({
         placa: ['',[Validators.required, Validators.minLength(6)]],
         marca: ['',[Validators.required, Validators.minLength(2)]],
-        color_vehiculo: ['',[Validators.required, Validators.minLength(2)]],
-        modelo: ['',[Validators.required, Validators.minLength(2)]],
+        color_vehiculo: ['',[Validators.required, Validators.minLength(1)]],
+        modelo: ['',[Validators.required, Validators.minLength(4)]],
       })
   }
   crearVehiculo(vehiculo:Vehiculo) {
