@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="col-lg-6 offset-lg-3">
+        <!-- Encabezado -->
+    <header>
+        <h1>Editar Vehiculo</h1>
+    </header>
+    <section>
+        <!-- Formulario de Creacion de Vehiculos -->
+        <form action="" [formGroup]="vehiculoForm" (ngSubmit)="!vehiculoForm.invalid && editarVeichulo(vehiculoForm.value)">
+            <div class="row">
+                <!-- campos del formulario -->
+                <div class="col col-12">
+                    <!-- placa -->
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="placa">Placa</label>
+                        <input id="placa" class="form-control" formControlName="placa" maxlength="6" autocomplete="off" placeholder="Ingrese la Placa">
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('placa')!.hasError('required') && vehiculoForm.get('placa')!.touched">Campo Requerido</div>
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('placa')!.hasError('minlength') && vehiculoForm.get('placa')!.touched">El contenido es muy corto</div>
+                    </div>
+                    <!-- marca -->
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="marca">Marca</label>
+                        <input id="marca" class="form-control" formControlName="marca" maxlength="10" autocomplete="off" placeholder="Ingrese la Marca">
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('marca')!.hasError('required') && vehiculoForm.get('marca')!.touched">Campo Requerido</div>
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('marca')!.hasError('minlength') && vehiculoForm.get('marca')!.touched">El contenido es muy corto</div>
+                    </div>
+                    <!-- modelo -->
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="modelo">Modelo</label>
+                        <input id="modelo" class="form-control" formControlName="modelo"  autocomplete="off" placeholder="Ingrese el Modelo">
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('modelo')!.hasError('required') && vehiculoForm.get('modelo')!.touched">Campo Requerido</div>
+                        <div class="alert alert_danger alert-dismissible fade show" *ngIf="vehiculoForm.get('modelo')!.hasError('minlength') && vehiculoForm.get('modelo')!.touched">El contenido es muy corto</div>
+                    </div>
+                    <!-- color -->
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="color_vehiculo">Color</label>
+                        <select name="color" class="form-control" formControlName="color" id="color">
+                            <option [ngValue]="1">Rojo</option>
+                            <option [ngValue]="2">Azul</option>
+                            <option [ngValue]="3">Verde</option>
+                        </select>
+                        <div class="alert alert-danger alert-dismissible fade show" *ngIf="vehiculoForm.get('color')!.hasError('required') && vehiculoForm.get('color')!.touched">Campo Requerido</div>
+                        <div class="alert alert-danger alert-dismissible fade show" *ngIf="vehiculoForm.get('color')!.hasError('minlength')">El contenido es muy corto, debe tener al menos dos caracteres</div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- Boton Crear -->
+            <button type="submit" class="btn btn-primary" [disabled]="!vehiculoForm.valid">Editar</button>&nbsp;
+        </form>
+    </section>
+    </div>
+</div>
