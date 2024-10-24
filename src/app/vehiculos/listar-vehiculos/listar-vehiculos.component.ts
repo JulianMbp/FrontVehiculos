@@ -13,6 +13,9 @@ import { NgFor } from '@angular/common';
   styleUrl: './listar-vehiculos.component.css'
 })
 export class ListarVehiculosComponent implements OnInit {
+onDeleteNavigate(arg0: number) {
+throw new Error('Method not implemented.');
+}
   Vehiculos: Array<Vehiculo> = [];
   constructor(private routerPath: Router, private vehiculosService: VehiculosService) {
     
