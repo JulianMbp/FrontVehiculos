@@ -25,8 +25,8 @@ export class EditarVehiculosComponent implements OnInit {
       this.idVehiculo = params['id'];
 
       this.vehiculosService.obtenerVehiculos(parseInt(this.idVehiculo)).subscribe(ve => {
-        /* this.vehiculo = ve; */
-        this.initForm();
+        this.vehiculo = ve;
+        this.initForm(); 
       });
     });
     }
