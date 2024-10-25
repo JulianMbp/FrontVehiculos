@@ -21,10 +21,10 @@ export class VehiculosService {
   crearVehiculos(vehiculo: Vehiculo): Observable<Vehiculo> {
     return this.http.post<Vehiculo>('http://127.0.0.1:8000/api/vehicle/crear-vehiculo' , vehiculo);
   }
-/*   obtenerVehiculo(id: number): Observable<Vehiculo> {
-    return this.http.get<Vehiculo>(`${API_URL_LIST}/${id}`);
-  } */
-    editarVehiculo(vehiculo: Vehiculo, id: number): Observable<Vehiculo> {
-      return this.http.put<Vehiculo>(`http://127.0.0.1:8000/api/vehicle/actualizar-vehiculo/${id}`, vehiculo);
+  obtenerVehiculo(id: number): Observable<Vehiculo> {
+    return this.http.get<Vehiculo>('http://127.0.0.1:8000/api/vehicle/'+'consultar/'+id);
+  }
+    editarVehiculo(vehiculo: Vehiculo, idVehiculo: number): Observable<Vehiculo> {
+      return this.http.put<Vehiculo>(`http://127.0.0.1:8000/api/vehicle/actualizar-vehiculo/`+ idVehiculo, vehiculo);
     }
 }

@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class EditarVehiculosComponent implements OnInit {
   vehiculoForm!: FormGroup;
   vehiculo:Vehiculo = new Vehiculo(1, '', '', '', '', '');
-  idVehiculo: string = '';//cambiar
+  idVehiculo: string = '';// el que se va a cambiar
   
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private vehiculosService: VehiculosService) {}
 
@@ -24,9 +24,9 @@ export class EditarVehiculosComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.idVehiculo = params['id'];
 
-      this.vehiculosService.obtenerVehiculos(parseInt(this.idVehiculo)).subscribe(ve => {
+      this.vehiculosService.obtenerVehiculo(parseInt(this.idVehiculo)).subscribe(ve => {
         this.vehiculo = ve;
-        this.initForm(); 
+        this.initForm(); //para consttruir el formulario
       });
     });
     }
@@ -35,12 +35,12 @@ export class EditarVehiculosComponent implements OnInit {
     this.vehiculoForm = this.formBuilder.group({
       placa: [this.vehiculo?.placa||'',[Validators.required]],
       marca: [this.vehiculo?.marca||'',[Validators.required, Validators.minLength(2)]],
-      color_vehiculo: [this.vehiculo?.color_vehiculo||'',[Validators.required, Validators.minLength(1)]],
+      color: [this.vehiculo?.color||'',[Validators.required, Validators.minLength(1)]],
       modelo: [this.vehiculo?.modelo||'',[Validators.required, Validators.minLength(4)]],
 
     })
   }
-  editarVeichulo(vehiculo:Vehiculo): void{
+  editarVehiculo(vehiculo:Vehiculo): void{
     this.vehiculosService.editarVehiculo(vehiculo, this.vehiculo.id).subscribe((vehi)=>{
       alert('Vehiculo editado con exito');
     });   

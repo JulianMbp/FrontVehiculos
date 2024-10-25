@@ -22,8 +22,8 @@ export class CrearVehiculosComponent implements OnInit {
       this.vehiculoForm = this.formBuilder.group({
         placa: ['',[Validators.required, Validators.minLength(6)]],
         marca: ['',[Validators.required, Validators.minLength(2)]],
-        color_vehiculo: ['',[Validators.required, Validators.minLength(1)]],
-        modelo: ['',[Validators.required, Validators.minLength(4)]],
+        color: ['',[Validators.required, Validators.minLength(1)]],
+        modelo: ['',[Validators.required, Validators.minLength(4), ]],
       })
   }
   crearVehiculo(vehiculo:Vehiculo) {

@@ -6,7 +6,7 @@
     </header>
     <section>
         <!-- Formulario de Creacion de Vehiculos -->
-        <form action="" [formGroup]="vehiculoForm" (ngSubmit)="!vehiculoForm.invalid && editarVeichulo(vehiculoForm.value)">
+        <form action="" [formGroup]="vehiculoForm" (ngSubmit)="!vehiculoForm.invalid && editarVehiculo(vehiculoForm.value)">
             <div class="row">
                 <!-- campos del formulario -->
                 <div class="col col-12">
@@ -33,7 +33,7 @@
                     </div>
                     <!-- color -->
                     <div class="form-group mx-sm-3 mb-2">
-                        <label for="color_vehiculo">Color</label>
+                        <label for="color">Color</label>
                         <select name="color" class="form-control" formControlName="color" id="color">
                             <option [ngValue]="1">Rojo</option>
                             <option [ngValue]="2">Azul</option>
